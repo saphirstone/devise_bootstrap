@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get 'store', to: 'home#store'
   get 'products', to: 'home#products'
   get 'edit', to: 'users#edit'
+  get 'forum', to: 'home#forum'
 end
