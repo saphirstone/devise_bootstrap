@@ -38,6 +38,8 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+            <!--si la personne est loged-->
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item active px-lg-4">
@@ -46,7 +48,7 @@
               </a>
             </li>
             <li>
-                <% if user_signed_in? %>
+                <% if user_signed_in? %> 
                     <li class="nav-item px-lg-4">
                         <a class="nav-link text-uppercase text-expanded" href="about">About</a>
                     </li>
@@ -58,7 +60,8 @@
                     </li> 
                     <li class="nav-item active px-lg-4">
                         <a class="nav-link text-uppercase text-expanded" href="forum">Forum</a>
-                    </li>                   
+                    </li> 
+                                      
                         <div class="btn-group">
                           <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Plus
@@ -72,12 +75,14 @@
                             </li>
                           </div>
                         </div>
+                      
+                      <li class="nav-item active px-lg-4 nav-link text-uppercase text-expanded">
+                        <%= current_user.email%>
+                      </li>
                     
                     
-
-                    <%= current_user.pseudo%>
             
-
+                <!-- si la personne n'est pas log-->
                 <% else %>
                     <li class="nav-item px-lg-4">
                         <%= link_to "Sign In", new_user_session_path, class:"nav-link text-uppercase text-expanded" %>
